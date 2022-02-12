@@ -43,5 +43,11 @@ function onEditorTypeChanged(selectedObject) {
 editor = monaco.editor.create(document.getElementById('code-container'), {
     value: languageExamples[selectedModel()],
     language: selectedModel(),
+
     scrollBeyondLastLine: false,
+    roundedSelection: false,
+    lineNumbers: 'on',
+    readOnly: false,
+    wordWrap: 'on',
+    theme: 'vs'
 });
