@@ -8,7 +8,14 @@
 	</head>
 	<body>
 		<h2>Code editor</h2>
-		<div id="code-container"></div>
+        <select id="models-select" onchange="onEditorTypeChanged(this)">
+            <option value="javascript" selected>Javascript</option>
+            <option value="python">Python 3.10</option>
+            <option value="scala">Scala 3</option>
+        </select>
+        <div id="editor-container">
+            <div id="code-container"></div>
+        </div>
 
 		<script>
 			var require = { paths: { vs: './node_modules/monaco-editor/min/vs' } };
