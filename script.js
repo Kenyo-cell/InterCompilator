@@ -10,6 +10,7 @@ function selectedModel() {
     var select = document.getElementById('models-select');
     return select.options[select.selectedIndex].value;
 }
+var currentLanguage = selectedModel();
 
 
 function createLanguageModel(modelLanguage) {
@@ -36,7 +37,16 @@ var avaliableModels = (function () {
 
 function onEditorTypeChanged(selectedObject) {
     var type = selectedObject.value;
+    currentLanguage = type;
     editor.setModel(avaliableModels[type]);
+}
+
+
+function runCode() {
+    var code = editor.getValue();
+    var language = currentLanguage;
+    console.log(code);
+    console.log(language);
 }
 
 
@@ -51,3 +61,4 @@ editor = monaco.editor.create(document.getElementById('code-container'), {
     wordWrap: 'on',
     theme: 'vs'
 });
+console.log(editor);
