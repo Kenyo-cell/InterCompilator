@@ -46,13 +46,30 @@ const [onEditorTypeChanged, runCode] = (function () {
     exportObjects.push(onEditorTypeChanged);
 
 
+    function sendCode(codeObject) {
+        var formData = new FormData();
+
+        formData.append('language', codeObject['language']);
+        var codeFile = new File([codeObject['code']], 'code.txt', {
+            type: 'text/plain',
+        });
+        formData.append('code', codeFile);
+
+        var request = new XMLHttpRequest();
+        request.open('POST', 'http://localhost:8081/submit');
+        request.send(formData);
+    }
+
+
     function runCode() {
         var code = editor.getValue();
         var language = currentLanguage;
-        console.log({
+        var codeObject = {
             'language': language,
             'code': code,
-        });
+        }
+        sendCode(codeObject)
+        console.log(codeObject);
     }
     exportObjects.push(runCode);
 
