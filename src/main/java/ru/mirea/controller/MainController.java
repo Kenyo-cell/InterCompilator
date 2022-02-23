@@ -8,8 +8,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 public class MainController {
-    @PostMapping("/")
-    public ResponseEntity<String> sendToExecute(@RequestPart MultipartFile file) {
+    @PostMapping("/submit")
+    public ResponseEntity<String> sendToExecute(@RequestPart String language, @RequestPart MultipartFile file) {
         System.out.println(file.getContentType());
         System.out.println(file.getName());
         return ResponseEntity.ok("Ok");
