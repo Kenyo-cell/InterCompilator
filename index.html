@@ -46,8 +46,8 @@
 				<div>
 					<h2>Code editor</h2>
 					<select id="models-select" onchange="onEditorTypeChanged(this)">
-						<option value="javascript" selected>Javascript</option>
-						<option value="python">Python 3.10</option>
+						<option value="javascript">Javascript</option>
+						<option value="python" selected>Python 3.10</option>
 						<option value="scala">Scala 3</option>
 					</select>
 					<div id="editor-container">
@@ -64,6 +64,7 @@
 		<script src="./node_modules/monaco-editor/min/vs/editor/editor.main.nls.js"></script>
 		<script src="./node_modules/monaco-editor/min/vs/editor/editor.main.js"></script>
 
+		<script src="./python_settings.js"></script>
         <script src="./script.js" defer></script>
 	</body>
 </html>

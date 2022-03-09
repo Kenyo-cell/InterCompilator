@@ -86,5 +86,34 @@ const [onEditorTypeChanged, runCode] = (function () {
         theme: 'vs'
     });
 
+
+    monaco.languages.registerCompletionItemProvider('python', {
+        provideCompletionItems: function (model, position) {
+            // find out if we are completing a property in the 'dependencies' object.
+            // var textUntilPosition = model.getValueInRange({
+            //     startLineNumber: 1,
+            //     startColumn: 1,
+            //     endLineNumber: position.lineNumber,
+            //     endColumn: position.column
+            // });
+            // var match = textUntilPosition.match(
+            //     /"dependencies"\s*:\s*\{\s*("[^"]*"\s*:\s*"[^"]*"\s*,\s*)*([^"]*)?$/
+            // );
+            // if (!match) {
+            //     return { suggestions: [] };
+            // }
+            var word = model.getWordUntilPosition(position);
+            var range = {
+                startLineNumber: position.lineNumber,
+                endLineNumber: position.lineNumber,
+                startColumn: word.startColumn,
+                endColumn: word.endColumn
+            };
+            return {
+                suggestions: defaultPythonSuggestions(range)
+            };
+        }
+    });
+
     return exportObjects;
 })();
