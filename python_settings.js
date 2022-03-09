@@ -3,6 +3,7 @@ function defaultPythonSuggestions(range) {
         {
             label: 'print',
             kind: monaco.languages.CompletionItemKind.Function,
+            detail: 'Prints the values to a stream, or to sys.stdout by default.\nOptional keyword arguments:\nfile:  a file-like object (stream); defaults to the current sys.stdout.\nsep:   string inserted between values, default a space.\nend:   string appended after the last value, default a newline.\nflush: whether to forcibly flush the stream.',
             documentation: 'Prints the values to a stream, or to sys.stdout by default.\nOptional keyword arguments:\nfile:  a file-like object (stream); defaults to the current sys.stdout.\nsep:   string inserted between values, default a space.\nend:   string appended after the last value, default a newline.\nflush: whether to forcibly flush the stream.',
             insertText: 'print(\'${1:Hello, world!}\')$0',
             insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
@@ -11,6 +12,7 @@ function defaultPythonSuggestions(range) {
         {
             label: 'input',
             kind: monaco.languages.CompletionItemKind.Function,
+            detail: 'Read a string from standard input.  The trailing newline is stripped.\n\nThe prompt string, if given, is printed to standard output without a\ntrailing newline before reading input.\n\nIf the user hits EOF (*nix: Ctrl-D, Windows: Ctrl-Z+Return), raise EOFError.\nOn *nix systems, readline is used if available.',
             documentation: 'Read a string from standard input.  The trailing newline is stripped.\n\nThe prompt string, if given, is printed to standard output without a\ntrailing newline before reading input.\n\nIf the user hits EOF (*nix: Ctrl-D, Windows: Ctrl-Z+Return), raise EOFError.\nOn *nix systems, readline is used if available.',
             insertText: 'input(\'Введите $1: \')$0',
             insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
@@ -19,6 +21,7 @@ function defaultPythonSuggestions(range) {
         {
             label: 'abs',
             kind: monaco.languages.CompletionItemKind.Function,
+            detail: 'Return the absolute value of the argument.',
             documentation: 'Return the absolute value of the argument.',
             insertText: 'abs($1)$0',
             insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
@@ -27,6 +30,7 @@ function defaultPythonSuggestions(range) {
         {
             label: 'all',
             kind: monaco.languages.CompletionItemKind.Function,
+            detail: 'Return True if bool(x) is True for all values x in the iterable.\n\nIf the iterable is empty, return True.',
             documentation: 'Return True if bool(x) is True for all values x in the iterable.\n\nIf the iterable is empty, return True.',
             insertText: 'all($1)$0',
             insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
@@ -35,6 +39,7 @@ function defaultPythonSuggestions(range) {
         {
             label: 'any',
             kind: monaco.languages.CompletionItemKind.Function,
+            detail: 'Return True if bool(x) is True for any x in the iterable.\n\nIf the iterable is empty, return False.',
             documentation: 'Return True if bool(x) is True for any x in the iterable.\n\nIf the iterable is empty, return False.',
             insertText: 'any($1)$0',
             insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
@@ -43,6 +48,7 @@ function defaultPythonSuggestions(range) {
         {
             label: 'ascii',
             kind: monaco.languages.CompletionItemKind.Function,
+            detail: 'Return an ASCII-only representation of an object.\n\nAs repr(), return a string containing a printable representation of an\nobject, but escape the non-ASCII characters in the string returned by\nrepr() using \\\\x, \\\\u or \\\\U escapes. This generates a string similar\nto that returned by repr() in Python 2.',
             documentation: 'Return an ASCII-only representation of an object.\n\nAs repr(), return a string containing a printable representation of an\nobject, but escape the non-ASCII characters in the string returned by\nrepr() using \\\\x, \\\\u or \\\\U escapes. This generates a string similar\nto that returned by repr() in Python 2.',
             insertText: 'ascii($1)$0',
             insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
@@ -51,6 +57,7 @@ function defaultPythonSuggestions(range) {
         {
             label: 'bin',
             kind: monaco.languages.CompletionItemKind.Function,
+            detail: 'Return the binary representation of an integer.\n\n   >>> bin(2796202)\n   \'0b1010101010101010101010\'',
             documentation: 'Return the binary representation of an integer.\n\n   >>> bin(2796202)\n   \'0b1010101010101010101010\'',
             insertText: 'bin($1)$0',
             insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
@@ -59,6 +66,7 @@ function defaultPythonSuggestions(range) {
         {
             label: 'bool',
             kind: monaco.languages.CompletionItemKind.Function,
+            detail: 'bool(x) -> bool\n\nReturns True when the argument x is true, False otherwise.\nThe builtins True and False are the only two instances of the class bool.\nThe class bool is a subclass of the class int, and cannot be subclassed.',
             documentation: 'bool(x) -> bool\n\nReturns True when the argument x is true, False otherwise.\nThe builtins True and False are the only two instances of the class bool.\nThe class bool is a subclass of the class int, and cannot be subclassed.',
             insertText: 'bool($1)$0',
             insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
@@ -67,6 +75,7 @@ function defaultPythonSuggestions(range) {
         {
             label: 'breakpoint',
             kind: monaco.languages.CompletionItemKind.Function,
+            detail: 'breakpoint(*args, **kws)\n\nCall sys.breakpointhook(*args, **kws).  sys.breakpointhook() must accept\nwhatever arguments are passed.\n\nBy default, this drops you into the pdb debugger.',
             documentation: 'breakpoint(*args, **kws)\n\nCall sys.breakpointhook(*args, **kws).  sys.breakpointhook() must accept\nwhatever arguments are passed.\n\nBy default, this drops you into the pdb debugger.',
             insertText: 'breakpoint()',
             insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
@@ -75,6 +84,7 @@ function defaultPythonSuggestions(range) {
         {
             label: 'bytearray',
             kind: monaco.languages.CompletionItemKind.Function,
+            detail: 'bytearray(iterable_of_ints) -> bytearray\nbytearray(string, encoding[, errors]) -> bytearray\nbytearray(bytes_or_buffer) -> mutable copy of bytes_or_buffer\nbytearray(int) -> bytes array of size given by the parameter initialized with null bytes\nbytearray() -> empty bytes array\n\nConstruct a mutable bytearray object from:\n  - an iterable yielding integers in range(256)\n  - a text string encoded using the specified encoding\n  - a bytes or a buffer object\n  - any object implementing the buffer API.\n  - an integer',
             documentation: 'bytearray(iterable_of_ints) -> bytearray\nbytearray(string, encoding[, errors]) -> bytearray\nbytearray(bytes_or_buffer) -> mutable copy of bytes_or_buffer\nbytearray(int) -> bytes array of size given by the parameter initialized with null bytes\nbytearray() -> empty bytes array\n\nConstruct a mutable bytearray object from:\n  - an iterable yielding integers in range(256)\n  - a text string encoded using the specified encoding\n  - a bytes or a buffer object\n  - any object implementing the buffer API.\n  - an integer',
             insertText: 'bytearray($1)$0',
             insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
@@ -179,6 +189,7 @@ function defaultPythonSuggestions(range) {
         {
             label: 'float',
             kind: monaco.languages.CompletionItemKind.Function,
+            detail: 'Convert a string or number to a floating point number, if possible.',
             documentation: 'Convert a string or number to a floating point number, if possible.',
             insertText: 'float($1)$0',
             insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
