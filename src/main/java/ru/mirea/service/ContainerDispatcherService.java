@@ -45,9 +45,6 @@ public class ContainerDispatcherService {
                             .collect(Collectors.toList())
             );
         }
-        containers.forEach((s, containerDefinitionObjects) -> {
-            System.out.printf("%s%n%s%n%n", s, containerDefinitionObjects.stream().map(Record::toString).collect(Collectors.joining()));
-        });
     }
 
     public ContainerDefinitionObject getFreeContainer(String language) {
