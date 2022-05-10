@@ -1,0 +1,14 @@
+[
+  {
+    "language": "python",
+    "port": 9000
+  },
+  {
+    "language": "javascript",
+    "port": 9001
+  },
+  {
+    "language": "java",
+    "port": 9002
+  }
+]
