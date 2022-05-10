@@ -1,10 +1,10 @@
 package ru.mirea.service;
 
-import org.springframework.stereotype.Service;
+import ru.mirea.exception.ExecutionTransferException;
 
-import java.io.File;
+import java.io.InputStream;
 
-@Service
 public abstract class IExecutionService {
-    protected abstract File execute(File executionFile, File inputFile);
+    protected final int TIMEOUT = 30;
+    public abstract byte[] execute(String language, InputStream source, InputStream input) throws ExecutionTransferException;
 }
