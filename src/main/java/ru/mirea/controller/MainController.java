@@ -10,7 +10,11 @@ import ru.mirea.service.ContextService;
 import ru.mirea.service.IExecutionService;
 import ru.mirea.service.UserService;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.util.stream.Collectors;
 
 /**
  * Основной класс контроллера приложения для сетевого взаимодействия по протоколу HTTP
@@ -50,14 +54,13 @@ public class MainController {
      */
     @CrossOrigin
     @PostMapping("/submit")
-    public ResponseEntity<?> execute(@RequestPart String language,
+    public ResponseEntity<String> execute(@RequestPart String language,
                                      @RequestPart(name = "code") MultipartFile source,
-                                     @RequestPart(name = "code") MultipartFile input) throws IOException {
-        System.out.println(source.getContentType());
-        System.out.println(source.getOriginalFilename());
-        System.out.println(new String(source.getBytes()));
+                                     @RequestPart(name = "input") MultipartFile input) throws IOException {
 
-        return ResponseEntity.ok("Ok");
+        byte[] result = executionService.execute(language, source.getInputStream(), input.getInputStream());
+
+        return ResponseEntity.ok(new String(result));
     }
 
     /**
