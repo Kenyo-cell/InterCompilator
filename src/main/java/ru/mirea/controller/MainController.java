@@ -1,21 +1,12 @@
 package ru.mirea.controller;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import ru.mirea.entity.ContextEntity;
-import ru.mirea.entity.UserEntity;
-import ru.mirea.service.ContextService;
 import ru.mirea.service.IExecutionService;
-import ru.mirea.service.UserService;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.util.stream.Collectors;
 
 /**
  * Основной класс контроллера приложения для сетевого взаимодействия по протоколу HTTP
