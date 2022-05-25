@@ -1,14 +1,17 @@
 [
   {
     "language": "python",
+    "host": "172.21.0.2",
     "port": 9000
   },
   {
     "language": "javascript",
+    "host": "localhost",
     "port": 9001
   },
   {
     "language": "java",
+    "host": "localhost",
     "port": 9002
   }
 ]
