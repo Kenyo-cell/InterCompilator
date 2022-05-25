@@ -6,7 +6,6 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 import ru.mirea.service.container.ContainerDefinitionObject;
 
-import java.io.File;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;

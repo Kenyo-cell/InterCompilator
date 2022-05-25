@@ -22,7 +22,7 @@ public class SocketExecutionService extends IExecutionService {
     public byte[] execute(String language, InputStream source, InputStream input) throws ExecutionTransferException {
         ContainerDefinitionObject container = containerDispatcherService.getFreeContainer(language);
         try (
-                Socket socket = new Socket("localhost", container.port());
+                Socket socket = new Socket(container.host(), container.port());
                 ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
                 ObjectInputStream ois = new ObjectInputStream(socket.getInputStream())
         ){
