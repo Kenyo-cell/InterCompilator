@@ -31,7 +31,7 @@ public class SocketExecutionService extends IExecutionService {
                     input.readAllBytes()
             );
 
-            System.out.println(container.host());
+            System.out.println("host " + container.host());
             socket.setSoTimeout(Math.toIntExact(TimeUnit.SECONDS.toMillis(TIMEOUT)));
 
             oos.writeObject(executionContext);
