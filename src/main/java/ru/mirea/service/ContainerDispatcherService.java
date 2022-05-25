@@ -45,6 +45,7 @@ public class ContainerDispatcherService {
                             .collect(Collectors.toList())
             );
         }
+        containers.forEach((k, v) -> System.out.printf("%s%n%s%n", k, v));
     }
 
     public ContainerDefinitionObject getFreeContainer(String language) {
