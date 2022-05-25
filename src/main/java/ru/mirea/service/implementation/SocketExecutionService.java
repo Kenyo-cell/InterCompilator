@@ -39,7 +39,7 @@ public class SocketExecutionService extends IExecutionService {
             ExecutionResultTransferObject returnedContext = (ExecutionResultTransferObject) ois.readObject();
             return returnedContext.result();
         } catch (IOException | ClassNotFoundException e) {
-            throw new ExecutionTransferException("", e);
+            throw new ExecutionTransferException("Transfer Error", e);
         }
     }
 }
