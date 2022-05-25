@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import ru.mirea.service.container.ContainerDefinitionObject;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,7 +22,7 @@ public class ContainerDispatcherService {
     public ContainerDispatcherService() throws Exception {
         ClassPathResource resource = new ClassPathResource("config/" + FILENAME);
         if (!resource.exists()) throw new Exception("Containers was not defined at classpath:/config/" + FILENAME);
-        File containersConfig = resource.getFile();
+        InputStream containersConfig = resource.getInputStream();
 
         List<ContainerDefinitionObject> containersDefinitions = new ObjectMapper()
                 .readValue(
